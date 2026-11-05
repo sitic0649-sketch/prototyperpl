@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskMate - To-Do List Mahasiswa</title>
+    <link rel="stylesheet" href="todo2.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h2>TaskMate</h2>
+            <p class="subtitle">Student Task Manager</p>
+
+            <nav>
+                <button class="menu active" data-filter="all">
+                    Dashboard
+                </button>
+
+                <button class="menu" data-filter="all">
+                    Semua Tugas
+                </button>
+
+                <button class="menu" data-filter="pending">
+                    Belum Selesai
+                </button>
+
+                <button class="menu" data-filter="done">
+                    Selesai
+                </button>
+            </nav>
+        </aside>
+
+        <!-- Konten Utama -->
+        <main class="main-content">
+
+            <header class="header">
+                <div>
+                    <h1>Dashboard</h1>
+                    <p>Kelola tugas kuliahmu dengan lebih teratur.</p>
+                </div>
+                <span class="user">Mahasiswa</span>
+            </header>
+
+            <!-- Ringkasan -->
+            <section class="summary">
+
+                <div class="card">
+                    <p>Total Tugas</p>
+                    <h2 id="totalTasks">0</h2>
+                </div>
+
+                <div class="card">
+                    <p>Belum Selesai</p>
+                    <h2 id="pendingTasks">0</h2>
+                </div>
+
+                <div class="card">
+                    <p>Selesai</p>
+                    <h2 id="doneTasks">0</h2>
+                </div>
+
+            </section>
+
+            <!-- Form Tambah Tugas -->
+            <section class="form-section" id="formSection">
+                <h2 id="formTitle">Tambah Tugas Baru</h2>
+
+                <form id="taskForm">
+
+                    <input type="hidden" id="taskId">
+
+                    <label for="taskName">Nama Tugas</label>
+                    <input type="text" id="taskName"
+                        placeholder="Masukkan nama tugas" required>
+
+                    <label for="subject">Mata Kuliah</label>
+                    <input type="text" id="subject"
+                        placeholder="Contoh: Rekayasa Perangkat Lunak" required>
+
+                    <label for="description">Deskripsi</label>
+                    <textarea id="description"
+                        placeholder="Keterangan tugas"></textarea>
+
+                    <label for="deadline">Tenggat Waktu</label>
+                    <input type="date" id="deadline" required>
+
+                    <label for="priority">Prioritas</label>
+                    <select id="priority">
+                        <option value="Rendah">Rendah</option>
+                        <option value="Sedang" selected>Sedang</option>
+                        <option value="Tinggi">Tinggi</option>
+                    </select>
+
+                    <div class="form-buttons">
+                        <button type="submit" id="saveButton">
+                            Simpan Tugas
+                        </button>
+
+                        <button type="button" id="cancelButton">
+                            Batal
+                        </button>
+                    </div>
+
+                </form>
+            </section>
+
+            <!-- Daftar Tugas -->
+            <section class="task-section">
+                <div class="task-header">
+                    <h2>Daftar Tugas</h2>
+
+                    <input type="search" id="searchInput"
+                        placeholder="Cari tugas...">
+                </div>
+
+                <div class="filter-buttons">
+                    <button class="filter active" data-filter="all">
+                        Semua
+                    </button>
+                    <button class="filter" data-filter="pending">
+                        Belum Selesai
+                    </button>
+                    <button class="filter" data-filter="done">
+                        Selesai
+                    </button>
+                </div>
+
+                <div id="taskList"></div>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="todo2.js"></script>
+
+</body>
+</html>

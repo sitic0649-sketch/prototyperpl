@@ -1,0 +1,363 @@
+/* Pengaturan dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6fb;
+    color: #263247;
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 230px;
+    background: #243b67;
+    color: white;
+    padding: 30px 20px;
+    flex-shrink: 0;
+}
+
+.sidebar h2 {
+    font-size: 27px;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    font-size: 12px;
+    color: #c4d1e8;
+    margin-bottom: 40px;
+}
+
+.sidebar nav {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.menu {
+    border: none;
+    background: transparent;
+    color: #dce5f5;
+    text-align: left;
+    padding: 13px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.menu:hover,
+.menu.active {
+    background: #3e5d94;
+    color: white;
+}
+
+/* Konten utama */
+.main-content {
+    flex: 1;
+    padding: 35px;
+    min-width: 0;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+.header p {
+    color: #7b8799;
+    font-size: 14px;
+}
+
+.user {
+    background: white;
+    padding: 12px 18px;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+/* Kartu ringkasan */
+.summary {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-bottom: 30px;
+}
+
+.card {
+    background: white;
+    padding: 23px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.04);
+}
+
+.card p {
+    color: #7b8799;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+.card h2 {
+    font-size: 30px;
+    color: #315a9b;
+}
+
+/* Formulir */
+.form-section,
+.task-section {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.04);
+}
+
+.form-section h2,
+.task-section h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+form label {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 14px 0 7px;
+}
+
+form input,
+form textarea,
+form select,
+#searchInput {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #dce2ec;
+    border-radius: 7px;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+}
+
+form textarea {
+    min-height: 75px;
+    resize: vertical;
+}
+
+form input:focus,
+form textarea:focus,
+form select:focus {
+    outline: 2px solid #a9c6f5;
+    border-color: #4779c7;
+}
+
+.form-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+button {
+    font-family: Arial, sans-serif;
+}
+
+#saveButton,
+#cancelButton {
+    border: none;
+    padding: 12px 20px;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+#saveButton {
+    background: #315fa5;
+    color: white;
+}
+
+#saveButton:hover {
+    background: #244a84;
+}
+
+#cancelButton {
+    background: #e8ecf3;
+    color: #35435a;
+}
+
+/* Daftar tugas */
+.task-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.task-header h2 {
+    margin: 0;
+}
+
+#searchInput {
+    max-width: 240px;
+}
+
+.filter-buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.filter {
+    border: none;
+    background: #edf1f7;
+    padding: 9px 15px;
+    border-radius: 7px;
+    cursor: pointer;
+    color: #46536a;
+}
+
+.filter.active {
+    background: #315fa5;
+    color: white;
+}
+
+/* Kartu setiap tugas */
+.task-item {
+    border: 1px solid #e6eaf0;
+    padding: 18px;
+    border-radius: 9px;
+    margin-bottom: 12px;
+}
+
+.task-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.task-item h3 {
+    font-size: 16px;
+    margin-bottom: 7px;
+}
+
+.task-item p {
+    font-size: 13px;
+    color: #7b8799;
+    margin-top: 7px;
+}
+
+.status {
+    font-size: 12px;
+    padding: 6px 10px;
+    border-radius: 20px;
+    height: fit-content;
+}
+
+.status.pending {
+    background: #fff1d6;
+    color: #a66b00;
+}
+
+.status.done {
+    background: #dcf6e6;
+    color: #23834c;
+}
+
+.priority {
+    font-weight: bold;
+}
+
+.task-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.task-actions button {
+    border: none;
+    border-radius: 6px;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.complete-btn {
+    background: #e0f4e8;
+    color: #207745;
+}
+
+.edit-btn {
+    background: #e3edff;
+    color: #28569c;
+}
+
+.delete-btn {
+    background: #ffe5e5;
+    color: #b33b3b;
+}
+
+.empty-message {
+    text-align: center;
+    padding: 30px;
+    color: #8a94a5;
+}
+
+/* Tampilan layar kecil */
+@media (max-width: 750px) {
+    .sidebar {
+        width: 170px;
+        padding: 20px 12px;
+    }
+
+    .main-content {
+        padding: 20px 15px;
+    }
+
+    .summary {
+        grid-template-columns: 1fr;
+    }
+
+    .header,
+    .task-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    #searchInput {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+    }
+
+    .sidebar nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .menu {
+        font-size: 12px;
+        padding: 9px;
+    }
+}
